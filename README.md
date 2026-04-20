@@ -157,22 +157,3 @@ npm start
 # Lint
 npm run lint
 ```
-
-## 📝 Catatan Pengembangan
-
-- Semua komponen chart menggunakan `"use client"` directive
-- Perhitungan statistik dilakukan di server component
-- Data dummy di-generate dengan distribusi berbeda per variabel untuk analisis yang menarik
-- PDF generator menggunakan font Times New Roman untuk format akademik
-
-## 🤝 Kontribusi
-
-Proyek ini dibuat untuk keperluan akademik. Untuk kontribusi atau pertanyaan, silakan hubungi tim pengembang.
-
-## 📄 Lisensi
-
-Proyek ini dibuat untuk keperluan pendidikan dan penelitian.
-
----
-
-**Dibuat dengan ❤️ menggunakan Next.js & TypeScript**
