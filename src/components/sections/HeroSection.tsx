@@ -28,7 +28,7 @@ export default function HeroSection({ stats }: HeroSectionProps) {
       <div className="relative z-10 text-center max-w-4xl">
         <div className="mb-8 inline-block px-4 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-full">
           <span className="text-sm text-[var(--text-secondary)]">
-            Statistika Deskriptif • 2024
+            Statistika Deskriptif • 2026
           </span>
         </div>
 

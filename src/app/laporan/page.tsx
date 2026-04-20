@@ -36,8 +36,8 @@ export default function LaporanPage() {
     <main className="min-h-screen">
       <Navbar />
 
-      {/* Floating Download Button */}
-      <button
+      {/* Floating Download Button - Hidden */}
+      {/* <button
         onClick={handleDownloadPDF}
         disabled={isGenerating}
         className="fixed bottom-8 right-8 z-50 flex items-center gap-2 px-6 py-3 bg-[var(--accent-blue)] text-white rounded-full shadow-lg hover:bg-[var(--accent-cyan)] transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -46,7 +46,7 @@ export default function LaporanPage() {
         <span className="font-semibold">
           {isGenerating ? "Membuat PDF..." : "Download PDF"}
         </span>
-      </button>
+      </button> */}
 
       <HeroSection
         stats={allStats.map((s) => ({ variable: s.variable, mean: s.mean }))}
