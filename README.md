@@ -11,7 +11,6 @@ Aplikasi web interaktif untuk menampilkan analisis statistik deskriptif dari dat
   - Boxplot perbandingan antar variabel
   - Chart analisis mean, variasi, dan outlier
 - **Analisis Otomatis** - Interpretasi data, kesimpulan, dan rekomendasi yang di-generate otomatis
-- **Export PDF** - Generate laporan akademik lengkap dalam format PDF (fitur tersedia)
 - **Responsive Design** - Tampilan optimal di desktop, tablet, dan mobile
 
 ## 🛠️ Tech Stack
@@ -53,7 +52,6 @@ npm run dev
 2. **Navigasi** menggunakan navbar sticky di atas atau scroll manual
 3. **Histogram** - Klik tab variabel untuk melihat distribusi masing-masing
 4. **Tabel Statistik** - Toggle "Tampilkan/Sembunyikan Statistik Lanjutan" untuk detail lengkap
-5. **Download PDF** - Klik button floating di kanan bawah (jika diaktifkan)
 
 ## 📊 Struktur Data
 
@@ -96,8 +94,7 @@ src/
 │       └── RekomendasiSection.tsx
 ├── lib/
 │   ├── data.ts             # Data dummy 100 responden
-│   ├── statistics.ts       # Fungsi perhitungan statistik
-│   └── pdfGenerator.ts     # Generator PDF laporan
+│   └── statistics.ts       # Fungsi perhitungan statistik
 └── types/
     └── index.ts            # TypeScript types & interfaces
 ```
