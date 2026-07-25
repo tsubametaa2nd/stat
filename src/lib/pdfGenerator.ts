@@ -949,15 +949,45 @@ export async function generatePDFReport(
         },
       });
 
-      y = (doc as any).lastAutoTable.finalY + 8;
+      y = (doc as any).lastAutoTable.finalY + 6;
 
       doc.setFont("times", "italic");
-      doc.setFontSize(9);
+      doc.setFontSize(8.5);
       doc.setTextColor(100, 100, 100);
       doc.text("Tabel 1. Ringkasan Hasil Pengujian ANOVA Satu Arah", pageWidth / 2, y, {
         align: "center",
       });
-      y += 15;
+      y += 10;
+
+      // Catatan Rincian Perhitungan df & ANOVA
+      doc.setFont("times", "bold");
+      doc.setFontSize(9);
+      doc.setTextColor(...COLORS.midBlue);
+      doc.text("Rincian Perhitungan Derajat Bebas (df) & Statistik ANOVA:", margin, y);
+      y += 5;
+
+      doc.setFont("times", "normal");
+      doc.setFontSize(8.5);
+      doc.setTextColor(60, 60, 60);
+
+      const k = anovaData.groupStats.length;
+      const totalN = anovaData.totalN || (anovaData.dfTotal + 1);
+
+      const dfLines = [
+        `1. df Antar Kelompok (df_Between) = k - 1 = ${k} - 1 = ${anovaData.dfBetween}`,
+        `2. df Dalam Kelompok (df_Within) = N - k = ${totalN} - ${k} = ${anovaData.dfWithin}`,
+        `3. df Total (df_Total) = N - 1 = ${totalN} - 1 = ${anovaData.dfTotal}`,
+        `4. MS Between = SS_Between / df_Between = ${anovaData.ssBetween.toFixed(3)} / ${anovaData.dfBetween} = ${anovaData.msBetween.toFixed(3)}`,
+        `5. MS Within = SS_Within / df_Within = ${anovaData.ssWithin.toFixed(3)} / ${anovaData.dfWithin} = ${anovaData.msWithin.toFixed(3)}`,
+        `6. F-Hitung = MS_Between / MS_Within = ${anovaData.msBetween.toFixed(3)} / ${anovaData.msWithin.toFixed(3)} = ${anovaData.fStatistic.toFixed(3)}`,
+      ];
+
+      dfLines.forEach((line) => {
+        doc.text(line, margin + 2, y);
+        y += 4.5;
+      });
+
+      y += 8;
 
       // 4.2 Visualisasi Interval Plot
       const anovaPlotImage = await captureElement("anova-plot-card");

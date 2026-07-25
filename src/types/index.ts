@@ -96,5 +96,7 @@ export interface AnovaResult {
   groupStats: GroupStat[];
   pairwiseComparisons: PairwiseComparison[];
   interpretation: string;
+  grandMean: number;
+  totalN: number;
 }
 

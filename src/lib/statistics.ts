@@ -486,5 +486,7 @@ export function computeAnova(
     groupStats,
     pairwiseComparisons,
     interpretation,
+    grandMean,
+    totalN: N,
   };
 }
