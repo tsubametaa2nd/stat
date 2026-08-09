@@ -155,6 +155,15 @@ function validateAndConvertData(data: Record<string, any>[]): ParsedData {
     "#",
     "Number",
     "number",
+    "NAMA",
+    "Nama",
+    "nama",
+    "KELAS",
+    "Kelas",
+    "kelas",
+    "NIS",
+    "Nis",
+    "nis"
   ];
   const variables = Array.from(allKeys).filter(
     (key) => !excludedColumns.includes(key),
